@@ -21,3 +21,14 @@ Decision variables: 1) stations, 2) relocation \
 Auxiliary variable: satisfied demand (the number of bikes fulfilled for the users)
  
 I set the auxiliary varaible to set the appropriate bounds and constraints for the calculations.
+
+Of course, I had to consider the new bikes coming in and out every hour which should be definitely considered for the calculation. Without the variables of replenishment, the optimisation for the relocation of bikes will be off the realistic situation (Even though I assumed that all the replenishment before the demand arrives). The net revenue has changed after considering the replenishment as we didn't need to move the extra bikes that were already meant to move to the targeted stations.
+
+#### Big-M Method
+Finally, I have also considered the types of vehicles to carry the bikes around. As we can now predict the number of bikes to carry between each station, we should not waste the money on the vehicles. 
+
+I use the big-M method with two binary variables (small capacity vehicles, large capacity vehicles). The big-M method is a way of solving a linear programmes using the simplex algorithm. It introduces the 'greater-than' constraints to the model by applying a very large constant which wont' be part of any optimal solution. It is a useful method when there are conditions to add. 
+
+### Results
+By using integer programming model and the big-M method, we successfully sorted out how much bikes should be moved hourly and the number and types of vehicles we should use for the relocation. This type of calculation can be very complex if we don't use the decision analytics, but it became very simple analytical method with integer programming model.
+
