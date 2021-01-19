@@ -13,10 +13,11 @@ The datasets I used for this analysis include:
 
 ### Analysis Method 
 #### Integer Programming Model
-Integer programming is the computational and mathematical optimisation program in which some or all of the variables are restricted to be integers.  
-To deal with the linear integer programming model, I used Gurobi package. Firstly, we need to decide the decision variables which has to do with the "relocation" of the bikes. Then, we should consider the auxiliary variable which could be useful for the decision but not directly related to the computation itself. 
+Integer programming is the computational and mathematical optimisation program in which some or all of the variables are restricted to be integers. The integer programming can be used when the integer variables represent quantities that can only be integers or when the variables represent decisions and so should be only take on the value 0 or 1.
+
+To deal with the linear integer programming model, I used Gurobi package. Firstly, I decided the decision variables which has to do with the "relocation" of the bikes. Then, I considered the auxiliary variable which could be useful for the decision but not directly related to the computation itself. 
 
 Decision variables: 1) stations, 2) relocation \
 Auxiliary variable: satisfied demand (the number of bikes fulfilled for the users)
-
-We need to set the auxiliary varaible to set the appropriate bounds and constraints for the calculations.
+ 
+I set the auxiliary varaible to set the appropriate bounds and constraints for the calculations.
